@@ -1,4 +1,4 @@
-ddf<-read.table('./exdata-data-household_power_consumption//household_power_consumption.txt',sep=';',nrows=2075259,header = T)
+ddf<-read.table('../exdata-data-household_power_consumption//household_power_consumption.txt',sep=';',nrows=2075259,header = T)
 ddf$Date<-as.Date(ddf$Date,format="%d/%m/%Y")
 dd<-subset(ddf,Date=="2007-02-01" | Date=="2007-02-02")
 par(mfrow = c(1,1))
