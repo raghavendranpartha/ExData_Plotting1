@@ -1,0 +1,7 @@
+ddf<-read.table('./exdata-data-household_power_consumption//household_power_consumption.txt',sep=';',nrows=2075259,header = T)
+ddf$Date<-as.Date(ddf$Date,format="%d/%m/%Y")
+dd<-subset(ddf,Date=="2007-02-01" | Date=="2007-02-02")
+par(mfrow = c(1,1))
+hist(as.numeric(as.character(dd$Global_active_power)),col="red",xlab="Global Active Power (kilowatts)",ylab="Frequency",main="Global Active Power",breaks = 15)
+dev.copy(png,file="plot1.png",height=480,width=480)
+dev.off()
